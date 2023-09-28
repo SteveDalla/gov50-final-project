@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to basketball or soccer, still not sure what specifically within those sports but definetly want to do somethin related to one of the two. 
+I am interested in exploring data related to basketball or soccer, still not sure what specifically within those sports but definitely want to do something related to one of the two. 
