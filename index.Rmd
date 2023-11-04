@@ -7,16 +7,49 @@ output:
     self_contained: false
 ---
 
-
-
 ## Project thoughts
 
-How does a team's offensive vs. defensive ratings in the regular season influence their performance in the NBA playoffs? Drawing from the idea that teams with good regular season records are more prepared for the challenges of the playoffs, I hypothesize that teams with better regular season offensive and defensive ratings will have more success in the playoffs (more success being defined as how far they advance in the playoffs). Behavioral and institutional explanations propose that teams excelling in the regular season have systems and strategies in place that translate to the more intense setting of the playoffs. Harnessing data from Basketball-Reference.com, spanning from the inception of the NBA playoffs in 1947 to the most recent full season, my analysis targets NBA teams with performance metrics who make the playoffs during a specific year (I won't be looking at data from let's say last year's Detroit Pistons since they did not make the playoffs). The explanatory variables are a team's "Offensive Rating" and "Defensive Rating" from the regular season, metrics representing points scored and conceded per 100 possessions, respectively. The outcome variable is the team's playoff performance which is measured in how far in the playoffs the team got (first round, second round, conference finals, and NBA finals). If teams with better regular season ratings consistently get further in the playoffs, this would prove my hypothesis. In contrast, a lack of a pattern or a negative relationship would reject the hypothesis. One problem I might run into is modeling this data since there are so few rounds and so many teams that I am looking at. Something that I could do is use an outcome variable of "net rating" in the playoffs which is simply the offensive rating - defensive rating. Something I want to try and consider is to also maybe see how offensive vs. defensive ratings matter in respect to each other. For example, is it better to have an okay offense and exceptional defense or vice versa. These are a couple directions I also thought about that I might consider doing either within the project or altering it slightly so it accounts/looks into this specifically. 
+How does a team's offensive vs. defensive ratings in the regular season influence their performance in the NBA playoffs? Drawing from the idea that teams with good regular season records are more prepared for the challenges of the playoffs, I hypothesize that teams with better regular season offensive and defensive ratings will have more success in the playoffs (more success being defined as how far they advance in the playoffs). Behavioral and institutional explanations propose that teams excelling in the regular season have systems and strategies in place that translate to the more intense setting of the playoffs. Harnessing data from Basketball-Reference.com, spanning from the inception of the NBA playoffs in 1947 to the most recent full season, my analysis targets NBA teams with performance metrics who make the playoffs during a specific year (I won't be looking at data from let's say last year's Detroit Pistons since they did not make the playoffs). The explanatory variables are a team's "Offensive Rating" and "Defensive Rating" from the regular season, metrics representing points scored and conceded per 100 possessions, respectively. The outcome variable is the team's playoff performance which is measured in how far in the playoffs the team got (first round, second round, conference finals, and NBA finals). If teams with better regular season ratings consistently get further in the playoffs, this would prove my hypothesis. In contrast, a lack of a pattern or a negative relationship would reject the hypothesis. One problem I might run into is modeling this data since there are so few rounds and so many teams that I am looking at. Something that I could do is use an outcome variable of "net rating" in the playoffs which is simply the offensive rating - defensive rating. Something I want to try and consider is to also maybe see how offensive vs. defensive ratings matter in respect to each other. For example, is it better to have an okay offense and exceptional defense or vice versa. These are a couple directions I also thought about that I might consider doing either within the project or altering it slightly so it accounts/looks into this specifically.
 
 ```{r}
 library(tidyverse)
 data = read_csv('data/project_data.csv')
-data
+
+ORtg_plot = data |>
+  ggplot(aes(x = ORtg, y = W)) + 
+  geom_point() + 
+  geom_smooth(method = 'lm', color = "red") + 
+  labs(title = 'Playoff Wins based on Offensive Rating', 
+       x = 'Offensive Rating', 
+       y = 'Wins')
+
+DRtg_plot = data |>
+  ggplot(aes(x = DRtg, y = W)) + 
+  geom_point() + 
+  geom_smooth(method = 'lm', color = 'red') + 
+  labs(title = 'Playoff Wins based on Defensive Rating', 
+       x = 'Defensive Rating', 
+       y = 'Wins')
+
+ORtg_diff_plot = data |>
+  ggplot(aes(x = Ortg_Difference, y = W)) + 
+  geom_point() + 
+  geom_smooth(method = 'lm', color = "red") +
+  labs(title = 'Playoff Wins based on Offensive Rating Difference between Regular Season and Playoffs', 
+       x = 'Offensive Rating Difference', 
+       y = 'Wins')
+
+DRtg_diff_plot = data |>
+  ggplot(aes(x = DRtg_Difference, y = W)) + 
+  geom_point() + 
+  geom_smooth(method = 'lm', color = "red") +
+  labs(title = 'Playoff Wins based on Defensive Rating Difference between Regular Season and Playoffs', 
+       x = 'Offensive Rating Difference', 
+       y = 'Wins')
+
+ORtg_plot
+DRtg_plot
+ORtg_diff_plot
+DRtg_diff_plot
 
 ```
-

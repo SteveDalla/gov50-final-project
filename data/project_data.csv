@@ -1,4 +1,4 @@
-Season,Team,DRtg,ORtg,Net Rtg,W,Playoff ORtg,Playoff DRtg,Playoff Net Rtg,ORtg Difference,DRtg Difference,Net Rtg Difference
+Season,Team,DRtg,ORtg,Net_Rtg,W,Playoff_Ortg,Playoff_DRtg,Playoff_Net_Rtg,Ortg_Difference,DRtg_Difference,Net_Rtg_Difference
 2022-23,SAC,116.8,119.4,2.6,3,110.7,112.8,-2.1,-8.7,-4,-4.7
 2022-23,ATL,116.3,116.6,0.3,2,115,120.3,-5.3,-1.6,4,-5.6
 2020-21,POR,116,117.8,1.8,2,121.6,122.9,-1.3,3.8,6.9,-3.1
