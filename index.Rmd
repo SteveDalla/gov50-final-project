@@ -53,3 +53,5 @@ ORtg_diff_plot
 DRtg_diff_plot
 
 ```
+
+We see that both offensive rating and defensive rating have a positive correlation with wins in the playoffs. This means that as offensive or defensive rating increases, so does wins. It seems from the slopes that defensive rating is more indicative of wins in the postseason, since the slope is more positive meaning an increase in defense leads to more wins at a faster rate than offense does. We see the same trends in the the other two graphs.
