@@ -13,7 +13,10 @@ How does a team's offensive vs. defensive ratings in the regular season influenc
 
 ```{r}
 library(tidyverse)
+library(DT)
 data = read_csv('data/project_data.csv')
+
+datatable(data, options = list(scrollY = '300px'))
 
 ORtg_plot = data |>
   ggplot(aes(x = ORtg, y = W)) + 
