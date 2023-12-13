@@ -16,7 +16,9 @@ library(tidyverse)
 library(DT)
 data = read_csv('data/project_data.csv')
 
-datatable(data, options = list(scrollY = '300px'))
+data_table = datatable(data, options = list(scrollY = '300px'))
+
+data_table
 
 ORtg_plot = data |>
   ggplot(aes(x = ORtg, y = W)) + 
