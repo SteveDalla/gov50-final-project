@@ -45,7 +45,9 @@ Teams_Reg_Season = data |>
        x = 'Offensive Rating (Regular Season)', 
        y = 'Defensive Rating (Regular Season)')
 Teams_Reg_Season
+```
 
+```{r}
 Teams_Playoffs = data |>
   ggplot(aes(x = Playoff_Ortg, y = Playoff_DRtg)) +
   geom_point() +
@@ -54,6 +56,7 @@ Teams_Playoffs = data |>
        y = 'Defensive Rating (Playoffs)')
 Teams_Playoffs
 ```
+
 Each point in these two graphs represents a different playoff team from 2003-Present. From the graph of teams in the regular season we see a very clear trend that as offensive rating increases so does defensive rating. Despite still seeing this overall trend in the playoffs, it is clearly not as strong based on the spread of the data points. 
 
 ```{r}
@@ -73,7 +76,9 @@ ORtg_vs_Progression = Playoff_Progression |>
        x = 'Furthest Progression in Playoffs', 
        y = 'Offensive Rating')
 ORtg_vs_Progression
+```
 
+```{r}
 DRtg_vs_Progression = Playoff_Progression |>
   ggplot(aes(x = Round, y = DRtg)) +
   geom_point() +
@@ -81,7 +86,9 @@ DRtg_vs_Progression = Playoff_Progression |>
      x = 'Furthest Progression in Playoffs', 
      y = 'Defensive Rating')
 DRtg_vs_Progression
+```
 
+```{r}
 Playoff_ORtg_vs_Progression = Playoff_Progression |>
   ggplot(aes(x = Round, y = Playoff_Ortg)) +
   geom_point() + 
@@ -89,7 +96,9 @@ Playoff_ORtg_vs_Progression = Playoff_Progression |>
        x = 'Furthest Progression in Playoffs', 
        y = 'Offensive Rating')
 Playoff_ORtg_vs_Progression
+```
 
+```{r}
 Playoff_DRtg_vs_Progression = Playoff_Progression |>
   ggplot(aes(x = Round, y = Playoff_DRtg)) +
   geom_point() + 
@@ -97,7 +106,9 @@ Playoff_DRtg_vs_Progression = Playoff_Progression |>
        x = 'Furthest Progression in Playoffs', 
        y = 'Defensive Rating')
 Playoff_DRtg_vs_Progression
+```
 
+```{r}
 ORtg_Difference_vs_Progression = Playoff_Progression |>
   ggplot(aes(x = Round, y = Ortg_Difference)) +
   geom_point() + 
@@ -105,7 +116,9 @@ ORtg_Difference_vs_Progression = Playoff_Progression |>
        x = 'Furthest Progression in Playoffs', 
        y = 'Offensive Rating Difference')
 ORtg_Difference_vs_Progression
+```
 
+```{r}
 DRtg_Difference_vs_Progression = Playoff_Progression |>
   ggplot(aes(x = Round, y = DRtg_Difference)) +
   geom_point() + 
@@ -127,7 +140,9 @@ ORtg_plot = data |>
        x = 'Offensive Rating (Regular Season)', 
        y = 'Wins')
 ORtg_plot
+```
 
+```{r}
 ORtg_Playoff_plot = data |>
   ggplot(aes(x = Playoff_Ortg, y = W)) + 
   geom_point() + 
@@ -136,7 +151,9 @@ ORtg_Playoff_plot = data |>
        x = 'Offensive Rating (Playoffs)', 
        y = 'Wins')
 ORtg_Playoff_plot
+```
 
+```{r}
 ORtg_diff_plot = data |>
   ggplot(aes(x = Ortg_Difference, y = W)) + 
   geom_point() + 
@@ -187,7 +204,9 @@ DRtg_plot = data |>
        x = 'Defensive Rating (Regular Season)', 
        y = 'Wins')
 DRtg_plot
+```
 
+```{r}
 DRtg_Playoff_plot = data |>
   ggplot(aes(x = Playoff_DRtg, y = W)) + 
   geom_point() + 
@@ -196,7 +215,9 @@ DRtg_Playoff_plot = data |>
        x = 'Defensive Rating (Playoffs)', 
        y = 'Wins')
 DRtg_Playoff_plot
+```
 
+```{r}
 DRtg_diff_plot = data |>
   ggplot(aes(x = DRtg_Difference, y = W)) + 
   geom_point() + 
@@ -250,7 +271,9 @@ net_rtg_plot = data |>
        x = 'Net Rating (Regular Season)', 
        y = 'Wins')
 net_rtg_plot
+```
 
+```{r}
 net_rtg_playoff_plot = data |>
   ggplot(aes(x = Playoff_Net_Rtg, y = W)) + 
   geom_point() + 
@@ -259,7 +282,9 @@ net_rtg_playoff_plot = data |>
        x = 'Net Rating (Playoffs)', 
        y = 'Wins')
 net_rtg_playoff_plot
+```
 
+```{r}
 net_rtg_diff_plot = data |>
   ggplot(aes(x = Net_Rtg_Difference, y = W)) +
   geom_point() + 
